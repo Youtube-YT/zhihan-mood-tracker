@@ -1,11 +1,15 @@
 <script>
-    import supabase from '$lib/db'; 
-	let password;
+    import supabase from '$lib/db';
+
     let email;
+    let password;
+
     async function loginUser() {
    	 const { error } = await supabase.auth.signIn({
-   		 email
+   		 email,
+   		 password
    	 });
+
    	 if (error) alert(error.message); // alert if error
     }
 </script>
